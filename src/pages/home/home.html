@@ -1,14 +1,32 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            School App
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <div class="row">
+        <h4>Subjects &nbsp; </h4>
+        <ion-icon style="color: black; font-size: 1.6em" name="add"></ion-icon>
+    </div>
+
+    <div class="row header">
+        <div class="col">Name</div>
+        <div class="col">Code</div>
+        <div class="col">Edit</div>
+        <div class="col">Del</div>
+    </div>
+    <div class="row" *ngFor="let item of list">
+        <div class="col">{{item.name}}</div>
+        <div class="col">{{item.code}}</div>
+        <div class="col">
+            <ion-icon style="color: blue" name="create" (click)="update(item.id)"></ion-icon>
+        </div>
+        <div class="col">
+            <ion-icon style="color: red" name="close" (click)="delete(item.id)"></ion-icon>
+        </div>
+
+    </div>
 </ion-content>

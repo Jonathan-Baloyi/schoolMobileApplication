@@ -6,6 +6,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ClassLevelService, GradesService, StudentsService, SubjectService, TeachersService, TestTypeService } from './services';
+import { ApiConfiguration } from './api-configuration';
 
 @NgModule({
   declarations: [
@@ -13,6 +17,8 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   imports: [
+    HttpClientModule,
+    BrowserAnimationsModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -22,6 +28,13 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   providers: [
+    ApiConfiguration,
+    ClassLevelService,
+    GradesService,
+    StudentsService,
+    SubjectService,
+    TeachersService,
+    TestTypeService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
